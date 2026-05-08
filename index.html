@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mame Birame MAR – Économiste | Analyste de données</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root{--bg:#f8f7f4;--bg2:#ffffff;--text:#1a1a2e;--muted:#6b7280;--accent:#c9903a;--accent2:#e8b96a;--border:#e5e7eb;--card:#ffffff;--nav-bg:rgba(248,247,244,0.92)}
+.dark{--bg:#0f1c2e;--bg2:#162335;--text:#f2ede6;--muted:#8a9ab0;--accent:#c9903a;--accent2:#e8b96a;--border:rgba(255,255,255,0.08);--card:rgba(255,255,255,0.04);--nav-bg:rgba(15,28,46,0.92)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;transition:background .3s,color .3s;padding-top:88px}
+nav{position:fixed;top:40px;width:100%;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:16px 5vw;background:var(--nav-bg);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);transition:background .3s}
+.nav-logo{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--accent);letter-spacing:1px}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s;font-weight:500}
+.nav-links a:hover{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.mode-btn{background:none;border:1px solid var(--border);border-radius:99px;padding:6px 12px;cursor:pointer;color:var(--muted);font-size:13px;transition:all .2s}
+.mode-btn:hover{border-color:var(--accent);color:var(--accent)}
+.cv-nav{background:var(--accent);color:#fff;border:none;border-radius:4px;padding:8px 16px;font-size:13px;cursor:pointer;text-decoration:none;font-weight:500;transition:background .2s}
+.cv-nav:hover{background:var(--accent2)}
+.banner{background:var(--accent);color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:500;position:fixed;top:0;width:100%;z-index:101}
+.hero{min-height:90vh;display:flex;align-items:center;padding:60px 5vw;max-width:1100px;margin:0 auto;gap:60px}
+.hero-text{flex:1}
+.hero-badge{display:inline-block;background:rgba(201,144,58,0.1);color:var(--accent);border:1px solid rgba(201,144,58,0.3);border-radius:99px;padding:6px 16px;font-size:12px;font-weight:600;letter-spacing:1px;margin-bottom:20px}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(36px,5vw,62px);font-weight:700;line-height:1.1;margin-bottom:16px;color:var(--text)}
+.hero h1 span{color:var(--accent)}
+.hero h2{font-size:18px;font-weight:400;color:var(--muted);margin-bottom:20px}
+.hero-desc{font-size:15px;color:var(--muted);max-width:520px;margin-bottom:32px;line-height:1.8}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:12px 24px;border-radius:4px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--accent);color:#fff;border:none}
+.btn-primary:hover{background:var(--accent2)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.hero-photo{width:220px;height:220px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--accent);display:block}
+.hero-placeholder{width:220px;height:220px;border-radius:50%;background:var(--card);border:3px solid var(--accent);display:none;align-items:center;justify-content:center;font-size:60px;color:var(--accent)}
+section{padding:80px 5vw;max-width:1100px;margin:0 auto}
+.section-tag{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--accent);margin-bottom:10px;text-transform:uppercase}
+h2.section-title{font-family:'Syne',sans-serif;font-size:clamp(26px,3.5vw,38px);font-weight:700;color:var(--text);margin-bottom:40px;line-height:1.2}
+h2.section-title span{color:var(--accent)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.about-text p{font-size:15px;color:var(--muted);line-height:1.9;margin-bottom:16px}
+.about-text strong{color:var(--text)}
+.about-list{list-style:none;margin:16px 0}
+.about-list li{font-size:14px;color:var(--muted);padding:6px 0;display:flex;gap:10px}
+.about-list li::before{content:'▸';color:var(--accent);flex-shrink:0}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center}
+.stat-num{font-family:'Syne',sans-serif;font-size:28px;font-weight:700;color:var(--accent)}
+.stat-lbl{font-size:12px;color:var(--muted);margin-top:4px}
+.skills-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.skill-cat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:24px}
+.skill-cat h3{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+.skill-badges{display:flex;flex-wrap:wrap;gap:8px}
+.skill-badges img{height:26px;border-radius:4px}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.why-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:24px;transition:border-color .2s,transform .2s}
+.why-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.why-icon{font-size:28px;margin-bottom:12px}
+.why-card h3{font-size:15px;font-weight:600;color:var(--text);margin-bottom:8px}
+.why-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.filter-btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filter-btn{padding:7px 18px;border-radius:99px;font-size:13px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s;font-weight:500}
+.filter-btn.active,.filter-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color .2s,transform .2s}
+.project-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.project-card.hidden{display:none}
+.project-img{width:100%;height:180px;object-fit:cover}
+.project-placeholder{width:100%;height:180px;background:linear-gradient(135deg,rgba(201,144,58,0.15),rgba(201,144,58,0.05));display:flex;align-items:center;justify-content:center;font-size:48px}
+.project-body{padding:20px}
+.project-tag{font-size:10px;font-weight:700;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.project-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.3}
+.project-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:14px}
+.project-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.chip{font-size:11px;padding:3px 10px;border-radius:99px;border:1px solid var(--border);color:var(--muted)}
+.project-link{font-size:13px;color:var(--accent);text-decoration:none;font-weight:500}
+.project-link:hover{text-decoration:underline}
+.exp-timeline{position:relative;padding-left:24px}
+.exp-timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border)}
+.exp-item{position:relative;margin-bottom:36px;padding-left:20px}
+.exp-item::before{content:'';width:10px;height:10px;border-radius:50%;background:var(--accent);position:absolute;left:-29px;top:6px}
+.exp-period{font-size:12px;color:var(--accent);font-weight:600;margin-bottom:4px}
+.exp-title{font-size:17px;font-weight:600;color:var(--text);margin-bottom:4px}
+.exp-org{font-size:14px;color:var(--muted);margin-bottom:10px}
+.exp-list{list-style:none}
+.exp-list li{font-size:14px;color:var(--muted);padding:4px 0;display:flex;gap:8px}
+.exp-list li::before{content:'→';color:var(--accent);flex-shrink:0}
+.formation-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.formation-card{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:24px}
+.formation-period{font-size:12px;color:var(--accent);font-weight:600;margin-bottom:8px}
+.formation-title{font-size:16px;font-weight:600;color:var(--text);margin-bottom:4px}
+.formation-school{font-size:14px;color:var(--muted);margin-bottom:10px}
+.formation-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-links{display:flex;flex-direction:column;gap:14px;margin-top:16px}
+.contact-link{display:flex;align-items:center;gap:12px;color:var(--text);text-decoration:none;font-size:14px;transition:color .2s}
+.contact-link:hover{color:var(--accent)}
+.contact-link i{width:20px;color:var(--accent);font-size:16px}
+.contact-form{display:flex;flex-direction:column;gap:14px}
+.form-input,.form-textarea{padding:12px 16px;border:1px solid var(--border);border-radius:6px;background:var(--bg2);color:var(--text);font-size:14px;font-family:'Outfit',sans-serif;transition:border-color .2s;width:100%}
+.form-input:focus,.form-textarea:focus{outline:none;border-color:var(--accent)}
+.form-textarea{resize:vertical;min-height:120px}
+.form-success{display:none;background:rgba(201,144,58,0.1);border:1px solid var(--accent);border-radius:6px;padding:12px 16px;font-size:14px;color:var(--accent);margin-top:8px}
+.scroll-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;background:var(--accent);color:#fff;border:none;border-radius:50%;font-size:18px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:99}
+.scroll-top.show{display:flex}
+footer{text-align:center;padding:30px 5vw;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
+.full-bg{background:var(--bg2);max-width:100%;padding:80px 5vw}
+.full-bg-inner{max-width:1100px;margin:0 auto}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:none}
+@media(max-width:768px){.hero{flex-direction:column-reverse;text-align:center;gap:30px}.hero-btns{justify-content:center}.about-grid,.contact-wrap{grid-template-columns:1fr}.nav-links{display:none}.hero-photo,.hero-placeholder{width:160px;height:160px}}
+</style>
+</head>
+<body>
+
+<div class="banner">📢 Disponible immédiatement — Analyste de données · Chargé d'études économiques · Chargé d'études statistiques</div>
+
+<nav>
+  <div class="nav-logo">MAME BIRAME MAR</div>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#why">Pourquoi moi</a></li>
+    <li><a href="#projects">Projets</a></li>
+    <li><a href="#experience">Expérience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="mode-btn" onclick="toggleDark()"><i class="fas fa-moon"></i></button>
+    <!-- ✏️ Quand votre CV est prêt remplacez le # par : cv-mame-birame-mar.pdf -->
+    <a href="#" class="cv-nav"><i class="fas fa-download"></i> Mon CV</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div style="background:var(--bg)">
+<div class="hero">
+  <div class="hero-text">
+    <div class="hero-badge">📊 Économiste · Analyste de données</div>
+    <h1>Je transforme vos données<br>en <span>décisions concrètes</span></h1>
+    <h2>Diplômé Master — Économie de l'entreprise et des marchés</h2>
+    <p class="hero-desc">
+      Diplômé de l'Université Marie et Louis Pasteur de Besançon, je mets mes compétences en analyse quantitative, économétrie et statistiques au service de la compréhension des marchés et de l'aide à la décision.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-primary"><i class="fas fa-folder-open"></i> Voir mes projets</a>
+      <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Me contacter</a>
+    </div>
+  </div>
+  <div>
+    <img src="maphoto.png" alt="Photo de Mame Birame MAR" class="hero-photo" onerror="this.style.display='none';document.getElementById('ph').style.display='flex'">
+    <div class="hero-placeholder" id="ph"><i class="fas fa-user"></i></div>
+  </div>
+</div>
+</div>
+
+<!-- À PROPOS -->
+<section id="about">
+  <div class="section-tag fade-in">01 — À propos</div>
+  <h2 class="section-title fade-in">À propos <span>de moi</span></h2>
+  <div class="about-grid fade-in">
+    <div class="about-text">
+      <p>Économiste de formation, spécialisé dans l'<strong>analyse quantitative</strong> et l'<strong>étude des marchés</strong>, j'ai développé une solide maîtrise des outils statistiques et économétriques appliqués à la compréhension du comportement des entreprises et des marchés.</p>
+      <p>Je souhaite mettre ces compétences au service d'une organisation en tant qu'<strong>analyste de données</strong>, <strong>chargé d'études économiques</strong> ou <strong>chargé d'études statistiques</strong>.</p>
+      <ul class="about-list">
+        <li><strong>🎯 Objectif :</strong>&nbsp;Analyste de données · Chargé d'études économiques ou statistiques</li>
+        <li><strong>📌 Localisation :</strong>&nbsp;Besançon, France — ouvert à la mobilité nationale</li>
+        <li><strong>⏳ Disponibilité :</strong>&nbsp;Disponible immédiatement</li>
+        <!-- ✏️ Ajoutez d'autres infos ici -->
+      </ul>
+      <!-- ✏️ Activez ce bouton quand votre CV est prêt :
+      <a href="cv-mame-birame-mar.pdf" download class="btn btn-primary" style="margin-top:20px"><i class="fas fa-download"></i> Télécharger mon CV</a> -->
+    </div>
+    <div class="about-stats">
+      <div class="stat-card"><div class="stat-num">Bac+5</div><div class="stat-lbl">Niveau de formation</div></div>
+      <div class="stat-card"><div class="stat-num">3+</div><div class="stat-lbl">Projets académiques</div></div><!-- ✏️ Changez le chiffre -->
+      <div class="stat-card"><div class="stat-num">6</div><div class="stat-lbl">Outils maîtrisés</div></div>
+      <div class="stat-card"><div class="stat-num">FR/EN</div><div class="stat-lbl">Langues</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPÉTENCES -->
+<div class="full-bg">
+<div class="full-bg-inner">
+  <div class="section-tag fade-in">02 — Compétences</div>
+  <h2 class="section-title fade-in">Ce que je <span>sais faire</span></h2>
+  <div class="skills-cats fade-in">
+    <div class="skill-cat">
+      <h3>Analyse & Statistiques</h3>
+      <div class="skill-badges">
+        <img src="https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white" alt="R">
+        <img src="https://img.shields.io/badge/SAS-004B87?style=for-the-badge&logo=sas&logoColor=white" alt="SAS">
+        <img src="https://img.shields.io/badge/Économétrie-1a1a2e?style=for-the-badge&logoColor=white" alt="Économétrie">
+      </div>
+    </div>
+    <div class="skill-cat">
+      <h3>Programmation & Données</h3>
+      <div class="skill-badges">
+        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+        <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL">
+      </div>
+    </div>
+    <div class="skill-cat">
+      <h3>Visualisation & Reporting</h3>
+      <div class="skill-badges">
+        <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=power-bi&logoColor=black" alt="Power BI">
+        <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white" alt="Excel">
+        <img src="https://img.shields.io/badge/Google%20Sheets-34A853?style=for-the-badge&logo=google-sheets&logoColor=white" alt="Google Sheets">
+      </div>
+    </div>
+    <div class="skill-cat">
+      <h3>Compétences transversales</h3>
+      <div class="skill-badges">
+        <img src="https://img.shields.io/badge/Rédaction-6b7280?style=for-the-badge&logoColor=white" alt="Rédaction">
+        <img src="https://img.shields.io/badge/Veille%20économique-c9903a?style=for-the-badge&logoColor=white" alt="Veille">
+        <img src="https://img.shields.io/badge/Analyse%20marchés-1a1a2e?style=for-the-badge&logoColor=white" alt="Marchés">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- POURQUOI MOI -->
+<section id="why">
+  <div class="section-tag fade-in">03 — Pourquoi moi ?</div>
+  <h2 class="section-title fade-in">Pourquoi <span>me choisir ?</span></h2>
+  <div class="why-grid fade-in">
+    <div class="why-card"><div class="why-icon">🎯</div><h3>Double compétence</h3><p>Formation alliant économie d'entreprise et analyse des marchés — je comprends autant les enjeux micro que macro.</p></div>
+    <div class="why-card"><div class="why-icon">📊</div><h3>Maîtrise des outils</h3><p>Excel, R, Python, SQL, Power BI, SAS — je choisis le bon outil selon le besoin pour livrer des analyses pertinentes.</p></div>
+    <div class="why-card"><div class="why-icon">📝</div><h3>Clarté des rapports</h3><p>Je transforme des données complexes en rapports clairs et lisibles, accessibles à tous les décideurs.</p></div>
+    <div class="why-card"><div class="why-icon">🔍</div><h3>Rigueur analytique</h3><p>Approche économétrique rigoureuse appliquée à des problématiques concrètes d'entreprises et de marchés.</p></div>
+  </div>
+</section>
+
+<!-- PROJETS -->
+<div class="full-bg">
+<div class="full-bg-inner">
+  <div class="section-tag fade-in" id="projects">04 — Projets</div>
+  <h2 class="section-title fade-in">Mes <span>réalisations</span></h2>
+  <div class="filter-btns fade-in">
+    <button class="filter-btn active" onclick="filterProjects('all',this)">Tous</button>
+    <button class="filter-btn" onclick="filterProjects('r',this)">R</button>
+    <button class="filter-btn" onclick="filterProjects('python',this)">Python</button>
+    <button class="filter-btn" onclick="filterProjects('excel',this)">Excel</button>
+    <button class="filter-btn" onclick="filterProjects('memoire',this)">Mémoire</button>
+  </div>
+  <div class="projects-grid fade-in">
+
+    <div class="project-card" data-tech="memoire r">
+      <div class="project-placeholder">📄</div>
+      <div class="project-body">
+        <div class="project-tag">Mémoire de Master</div>
+        <div class="project-title">✏️ Titre de votre mémoire de recherche</div><!-- ✏️ -->
+        <div class="project-desc">✏️ Décrivez votre sujet, votre méthodologie et vos principaux résultats.</div><!-- ✏️ -->
+        <div class="project-chips"><span class="chip">Économétrie</span><span class="chip">R</span></div>
+        <!-- ✏️ <a href="LIEN" target="_blank" class="project-link">Voir le projet →</a> -->
+      </div>
+    </div>
+
+    <div class="project-card" data-tech="excel">
+      <div class="project-placeholder">📊</div>
+      <div class="project-body">
+        <div class="project-tag">Étude de cas</div>
+        <div class="project-title">✏️ Titre d'un projet ou étude de cas</div><!-- ✏️ -->
+        <div class="project-desc">✏️ Décrivez le contexte, la problématique et ce que vous avez produit.</div><!-- ✏️ -->
+        <div class="project-chips"><span class="chip">Excel</span><span class="chip">Analyse sectorielle</span></div>
+      </div>
+    </div>
+
+    <div class="project-card" data-tech="python r">
+      <div class="project-placeholder">📈</div>
+      <div class="project-body">
+        <div class="project-tag">Analyse quantitative</div>
+        <div class="project-title">✏️ Titre de votre 3ème projet</div><!-- ✏️ -->
+        <div class="project-desc">✏️ Description du projet : contexte, données, méthode, résultats.</div><!-- ✏️ -->
+        <div class="project-chips"><span class="chip">Python</span><span class="chip">Statistiques</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- EXPÉRIENCE -->
+<section id="experience">
+  <div class="section-tag fade-in">05 — Expérience</div>
+  <h2 class="section-title fade-in">Mon <span>parcours professionnel</span></h2>
+  <div class="exp-timeline fade-in">
+
+    <!-- ✏️ Remplissez avec vos vraies expériences ou supprimez si pas encore de stage -->
+    <div class="exp-item">
+      <div class="exp-period">✏️ MOIS ANNÉE – MOIS ANNÉE</div>
+      <div class="exp-title">✏️ Intitulé du poste</div>
+      <div class="exp-org">✏️ Organisation — Ville</div>
+      <ul class="exp-list">
+        <li>✏️ Mission principale</li>
+        <li>✏️ Deuxième mission ou réalisation</li>
+        <li>✏️ Résultat obtenu</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-period">2022 – 2024</div><!-- ✏️ Vos dates -->
+      <div class="exp-title">Master — Économie de l'entreprise et des marchés</div>
+      <div class="exp-org">Université Marie et Louis Pasteur — Besançon</div>
+      <ul class="exp-list">
+        <li>Spécialisation en analyse quantitative et économétrie appliquée</li>
+        <li>Mémoire de recherche sur ✏️ votre sujet</li>
+        <li>Cours : microéconomie avancée, analyse des marchés, finance d'entreprise</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- FORMATION -->
+<div class="full-bg">
+<div class="full-bg-inner">
+  <div class="section-tag fade-in">06 — Formation</div>
+  <h2 class="section-title fade-in">Mon <span>parcours académique</span></h2>
+  <div class="formation-grid fade-in">
+    <div class="formation-card">
+      <div class="formation-period">2022 – 2024</div><!-- ✏️ -->
+      <div class="formation-title">Master — Économie de l'entreprise et des marchés</div>
+      <div class="formation-school">Université Marie et Louis Pasteur — Besançon</div>
+      <div class="formation-desc">Spécialisation en analyse quantitative, organisation industrielle et économétrie. Mémoire sur ✏️ votre sujet.</div>
+    </div>
+    <div class="formation-card">
+      <div class="formation-period">✏️ 2019 – 2022</div>
+      <div class="formation-title">✏️ Licence — Économie</div>
+      <div class="formation-school">✏️ Université — Ville</div>
+      <div class="formation-desc">✏️ Décrivez brièvement votre licence.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-tag fade-in">07 — Contact</div>
+  <h2 class="section-title fade-in">Travaillons <span>ensemble</span></h2>
+  <div class="contact-wrap fade-in">
+    <div>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8">Vous cherchez un <strong>économiste analyste de données</strong> rigoureux et disponible immédiatement ?<br><br>Je suis ouvert aux opportunités : <strong>CDI, CDD, stage</strong> ou mission en analyse de données, chargé d'études économiques ou statistiques.</p>
+      <div class="contact-links">
+        <a href="mailto:mamebiramemar74@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> mamebiramemar74@gmail.com</a>
+        <!-- ✏️ Remplacez votre-profil par votre lien LinkedIn -->
+        <a href="https://linkedin.com/in/✏️votre-profil" target="_blank" class="contact-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/mamebiramemar" target="_blank" class="contact-link"><i class="fab fa-github"></i> github.com/mamebiramemar</a>
+        <a href="https://mamebiramemar.github.io" target="_blank" class="contact-link"><i class="fas fa-globe"></i> mamebiramemar.github.io</a>
+      </div>
+    </div>
+    <div class="contact-form">
+      <input class="form-input" type="text" placeholder="Votre nom" id="cn">
+      <input class="form-input" type="email" placeholder="Votre email" id="ce">
+      <input class="form-input" type="text" placeholder="Objet" id="cs">
+      <textarea class="form-textarea" placeholder="Votre message..." id="cm"></textarea>
+      <button class="btn btn-primary" onclick="sendContact()"><i class="fas fa-paper-plane"></i> Envoyer</button>
+      <div class="form-success" id="fs">✅ Merci ! Je vous recontacte rapidement.</div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 Mame Birame MAR — Portfolio conçu avec GitHub Pages</footer>
+
+<button class="scroll-top" id="st" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.querySelector('.mode-btn i').className=document.body.classList.contains('dark')?'fas fa-sun':'fas fa-moon';
+}
+function filterProjects(tech,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.project-card').forEach(c=>{
+    c.classList.toggle('hidden',tech!=='all'&&!c.dataset.tech.includes(tech));
+  });
+}
+window.addEventListener('scroll',()=>document.getElementById('st').classList.toggle('show',scrollY>400));
+function sendContact(){
+  const n=document.getElementById('cn').value,e=document.getElementById('ce').value,s=document.getElementById('cs').value,m=document.getElementById('cm').value;
+  if(!n||!e||!m){alert('Merci de remplir tous les champs.');return;}
+  window.location.href=`mailto:mamebiramemar74@gmail.com?subject=${encodeURIComponent(s||'Contact portfolio')}&body=${encodeURIComponent('De: '+n+' ('+e+')\n\n'+m)}`;
+  document.getElementById('fs').style.display='block';
+}
+const obs=new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
