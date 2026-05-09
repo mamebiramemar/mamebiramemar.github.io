@@ -388,7 +388,7 @@ window.addEventListener('scroll',()=>document.getElementById('st').classList.tog
 function sendContact(){
   const n=document.getElementById('cn').value,e=document.getElementById('ce').value,s=document.getElementById('cs').value,m=document.getElementById('cm').value;
   if(!n||!e||!m){alert('Merci de remplir tous les champs.');return;}
-  window.location.href=`mailto:mamebiramemar74@gmail.com?subject=${encodeURIComponent(s||'Contact portfolio')}&body=${encodeURIComponent('De: '+n+' ('+e+')\n\n'+m)}`;
+  window.location.href=`mailto:mamebiramemar074@gmail.com?subject=${encodeURIComponent(s||'Contact portfolio')}&body=${encodeURIComponent('De: '+n+' ('+e+')\n\n'+m)}`;
   document.getElementById('fs').style.display='block';
 }
 const obs=new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible');}),{threshold:0.1});
